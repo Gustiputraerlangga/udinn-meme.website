@@ -1,0 +1,96 @@
+/* styles.css - Simple responsive landing page */
+:root{
+  --bg:#0e0f14;
+  --card:#121217;
+  --muted:#9aa0a6;
+  --accent1:#ffcf4d;
+  --accent2:#6de0ff;
+  --glass: rgba(255,255,255,0.03);
+  --radius:14px;
+  --maxw:1100px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, #07070a 0%, #0f1115 100%);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  font-size:16px;
+}
+
+.container{
+  width:90%;
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:40px 0;
+}
+
+.site-header{
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  position:sticky;
+  top:0;
+  background: linear-gradient(180deg, rgba(10,11,14,0.6), rgba(10,11,14,0.4));
+  z-index:50;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{
+  width:58px;height:58px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  display:flex;align-items:center;justify-content:center;color:#081018;font-weight:700;font-size:20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+.brand h1{margin:0;font-size:18px}
+.tagline{margin:0;color:var(--muted);font-size:13px}
+
+.nav{display:flex;gap:14px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;font-size:15px}
+.btn{padding:10px 14px;border-radius:10px;text-decoration:none;display:inline-block}
+.btn.primary{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#061018;font-weight:700}
+.btn.ghost{border:1px solid rgba(255,255,255,0.04);color:var(--muted);background:transparent}
+.btn.small{padding:8px 10px;font-size:14px}
+
+/* Hero */
+.hero{padding:60px 0}
+.hero-inner{display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.hero-text{flex:1 1 520px}
+.hero-text h2{font-size:36px;margin:0 0 12px}
+.hero-text p{color:var(--muted);margin:0 0 18px}
+.actions{display:flex;gap:12px}
+
+.hero-card{background:var(--card);padding:18px;border-radius:12px;min-width:260px;box-shadow: 0 8px 30px rgba(2,6,23,0.6)}
+.price{color:var(--muted);margin-bottom:12px}
+.stat{display:flex;gap:10px;flex-direction:column}
+.stat div{background:var(--glass);padding:10px;border-radius:10px}
+
+/* Sections */
+.section{padding:36px 0}
+.section.alt{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border-top:1px solid rgba(255,255,255,0.02)}
+.cards{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px}
+.card{background:var(--card);padding:18px;border-radius:12px;flex:1;min-width:200px}
+
+.tokenomics-list{background:var(--card);padding:18px;border-radius:12px}
+.note{color:var(--muted);font-size:14px;margin-top:8px}
+
+.roadmap{background:var(--card);padding:18px;border-radius:12px}
+.roadmap li{margin:8px 0}
+
+/* socials */
+.socials{display:flex;gap:10px;margin-top:12px}
+.social{padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.02);text-decoration:none;color:var(--muted)}
+
+/* footer */
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:20px 0;color:var(--muted);font-size:14px}
+
+/* responsive */
+@media (max-width:800px){
+  .nav{display:none}
+  .hero-inner{flex-direction:column-reverse}
+  .logo{width:48px;height:48px}
+  .hero-text h2{font-size:26px}
+}
